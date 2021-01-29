@@ -8,7 +8,7 @@
 </head>
 <body>
 
-	<h1>Parent logged in options</h1>
+	<h1>Parent logged in options go here</h1>
 
 </body>
 </html>

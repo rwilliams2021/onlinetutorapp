@@ -13,7 +13,7 @@
 <body>
 
 	<jsp:include page="/menu.jsp"></jsp:include>
-	<h2>Product List</h2>
+	<h2>Parent List</h2>
 
 <table class="clist">
 <tr><td class="col">Id</td><td class="col">Name</td><td class="col">Email</td><td class="col">Cellno</td>
