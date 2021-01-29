@@ -8,8 +8,7 @@
 </head>
 <body>
 
-	<h1>Hello Spring MVC!!</h1>
-	
-	<h2>Hello : ${name},${city}</h2>
+	<h1>Parent logged in options</h1>
+
 </body>
 </html>

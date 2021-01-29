@@ -1,12 +1,16 @@
-/*package com.finalproject.controller;
+package com.finalproject.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.finalproject.domain.Parent;
 import com.finalproject.service.ParentService;
 
 @Controller
@@ -22,6 +26,24 @@ public class ParentController {
 		return "showparents";
 		
 	}
+	@RequestMapping(value = "/register",method = RequestMethod.GET)
+	public String registerParents() {;
+		return "registerparent";
+	}
+	@RequestMapping(value = "/register",method = RequestMethod.POST)
+	public String doRegister(String name, String email, String password, String cellno, Model model) {
+		Parent p = new Parent();
+		p.setName(name);
+		p.setEmail(email);
+		p.setPassword(password);
+		p.setCellno(Integer.valueOf(cellno));
+		int n = parentService.add(p);
+		if(n>0)
+			return "regsuccessparent";
+		else
+			return "registerparent";
+	}
+
 	@RequestMapping(value = "/loginparents", method = RequestMethod.GET)
 	public String doLogin() {
 		return "loginparent";
@@ -36,12 +58,13 @@ public class ParentController {
 		{
 			session.setAttribute("email", email);
 //			parentService.updateCart(session.getId(), email); //possibly updatetutor here instead
-			return "showtutors";
+			return "parentloggedin";
 		}
 		else {
 			model.addAttribute("msg","Invalid email/password");
 			return "loginparent";
 		}
+	}
 
 	public void setParentService(ParentService parentService) {
 		this.parentService = parentService;
@@ -49,4 +72,3 @@ public class ParentController {
 
 	
 }
-*/
