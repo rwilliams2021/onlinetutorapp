@@ -11,7 +11,7 @@
 <body>
 	<jsp:include page="menu.jsp"></jsp:include>
 	<h2>
-		Welcome to Zen shop
+		Welcome to Online Tutor App
 		<c:if test="${login == null}">Guest</c:if>
 		<c:if test="${login != null}">${login}</c:if>
 	</h2>
