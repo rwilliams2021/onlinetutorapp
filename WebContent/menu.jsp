@@ -1,6 +1,5 @@
 
 <table width="400px">
-
 	<tr>
 		<td><a href="index.jsp">Home</a></td>
 		<!-- list parents should be option for tutor -->
@@ -13,7 +12,8 @@
 		<td><a href="booktutor">Book Tutor</a></td>
 		<td><a href="tutorbyid">Show Booked Tutor</a></td>
 		<td><a href="ratetutor">Rate Tutor</a></td>
-
+    <!-- 		handled by LoginController -->
+    <td><a href="login">Admin Login</a></td>
 
 
 
