@@ -24,6 +24,9 @@
 				<label>Password</label> <input type='text' name='password'>
 			</div>
 			<div>
+				<label>Cellno</label> <input type='text' name='cellno'>
+			</div>
+			<div>
 				<button>Next>></button>
 			</div>
 		</div>

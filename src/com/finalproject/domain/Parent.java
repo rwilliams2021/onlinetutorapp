@@ -11,15 +11,6 @@ public class Parent {
 
 	}
 
-	public Parent(int id, String name, String email, String password, int cellno) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.email = email;
-		this.password = password;
-		this.cellno = cellno;
-	}
-
 	public String getPassword() {
 		return password;
 	}
@@ -58,6 +49,12 @@ public class Parent {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	@Override
+	public String toString() {
+		return "Parent [id=" + id + ", name=" + name + ", email=" + email + ", password=" + password + ", cellno="
+				+ cellno + "]";
 	}
 
 	

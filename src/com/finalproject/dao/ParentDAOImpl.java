@@ -30,8 +30,8 @@ public class ParentDAOImpl implements ParentDAO{
 
 	@Override
 	public int save(Parent parent) {
-		String sql = "insert into parents(name,email) values (?,?)";
-		Object params[] = {parent.getName(),parent.getEmail()};
+		String sql = "insert into parents(name,email,password,cellno) values (?,?,?,?)";
+		Object params[] = {parent.getName(),parent.getEmail(),parent.getPassword(),parent.getCellno()};
 		int n = jdbcTemplate.update(sql,params);
 		return n;
 	}
