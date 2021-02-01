@@ -25,7 +25,7 @@
 
 </head>
 
-<jsp:include page="/menu.jsp"></jsp:include>
+<jsp:include page="/mainmenudummy.jsp"></jsp:include>
 <body>
 	<h2>Login Parent</h2>
 
