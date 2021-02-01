@@ -42,7 +42,7 @@ public class ParentServiceImpl implements ParentService{
 
 	@Override
 	public boolean check(Parent parent) {
-		return parentDAO.check(parent);
+		return parentDAO.checkLogin(parent);
 	}
 
 }

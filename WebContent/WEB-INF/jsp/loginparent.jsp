@@ -8,7 +8,7 @@
 
 <script>
 	function validate(frm) {
-		if (frm.login.value == "") {
+		if (frm.email.value == "") {
 			alert("Login is required...");
 			return false;
 		}

@@ -9,5 +9,5 @@ public interface ParentDAO {
 	public Parent findById(int id);
 	public int save(Parent parent);
 	public int delete(int id);
-	public boolean check(Parent parent);
+	public boolean checkLogin(Parent parent);
 }

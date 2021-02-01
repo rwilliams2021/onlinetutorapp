@@ -32,16 +32,23 @@ public class ParentController {
 	}
 	@RequestMapping(value = "/register",method = RequestMethod.POST)
 	public String doRegister(String name, String email, String password, String cellno, Model model) {
+		
+		if((name!="")&&(email!="")&&(password!="")&&(cellno!="")) {
 		Parent p = new Parent();
 		p.setName(name);
 		p.setEmail(email);
 		p.setPassword(password);
-		p.setCellno(Integer.valueOf(cellno));
+		p.setCellno(cellno);
 		int n = parentService.add(p);
 		if(n>0)
 			return "regsuccessparent";
 		else
 			return "registerparent";
+		}
+		else {
+			model.addAttribute("msg","Please fill in all fields");
+			return "registerparent";
+		}
 	}
 
 	@RequestMapping(value = "/loginparents", method = RequestMethod.GET)
