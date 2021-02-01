@@ -17,7 +17,7 @@
 <form action="addtutors" method="post">
 <table class="clist">
 <tr><td class="col">Id</td><td class="col">Name</td><td class="col">Email</td><td class="col">Cell Number</td>
-	<c:forEach items="${tutor}" var="p">
+	<c:forEach items="${tutor}" var="t">
 		
 			
 				<tr>
