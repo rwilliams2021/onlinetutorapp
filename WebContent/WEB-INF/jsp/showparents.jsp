@@ -15,24 +15,31 @@
 	<jsp:include page="/mainmenudummy.jsp"></jsp:include>
 	<h2>Parent List</h2>
 
-<table class="clist">
-<tr><td class="col">Id</td><td class="col">Name</td><td class="col">Email</td><td class="col">Cellno</td>
-	<c:forEach items="${parents}" var="p">
-		<form action="addtocart" method="post">
-			
-				<tr>
-					<td class="col">${p.getId()}<input type="hidden" name="pid" value="${p.getId()}"></td>
-					
-					<td class="col">${p.getName()}</td>
-					<td class="col">${p.getEmail()}</td>
-					<td class="col">${p.getCellno()}</td>
-									<td class="col"><button>Add</button></td>
-				</tr>
-		
-		</form>
+	<table class="clist">
+		<tr>
+			<td class="col">Id</td>
+			<td class="col">Name</td>
+			<td class="col">Email</td>
+			<td class="col">Cellno</td>
+			<c:forEach items="${parents}" var="p">
+				<form action="deleteparent" method="post">
 
-	</c:forEach>
+					<tr>
+						<td class="col">${p.getId()}<input type="hidden" name="pid"
+							value="${p.getId()}"></td>
+
+						<td class="col">${p.getName()}</td>
+						<td class="col">${p.getEmail()}</td>
+						<td class="col">${p.getCellno()}</td>
+						<td class="col"><button>Delete</button></td>
+					</tr>
+					<div>
+						<h6 style="color: red">${msg}</h6>
+					</div>
+				</form>
+
+			</c:forEach>
 	</table>
-		
+
 </body>
 </html>
