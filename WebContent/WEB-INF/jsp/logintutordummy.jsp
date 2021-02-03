@@ -27,27 +27,8 @@
 
 <jsp:include page="/mainmenu.jsp"></jsp:include>
 <body>
-	<h2>Login Parent</h2>
+	<h2>Login Tutor</h2>
 
-	<form action="loginparents" method="post">
-
-		<div>
-			<div>
-				<label>Email</label> <input type="text" name="email">
-			</div>
-			<div>
-				<label>Password</label> <input type="password" name="password">
-			</div>
-			<div>
-				<h6 style="color: red">${msg}</h6>
-			</div>
-			<div>
-
-				<button>Next>></button>
-			</div>
-		</div>
-
-	</form>
 </body>
 </html>
 

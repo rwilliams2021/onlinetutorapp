@@ -7,8 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<jsp:include page="/mainmenudummy.jsp"></jsp:include>
 
-<h1>Succesfully registered parent</h1>
 </body>
 </html>
