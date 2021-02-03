@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<jsp:include page="/parentmenu.jsp"></jsp:include>
 
 	<h1>Parent logged in options go here</h1>
 

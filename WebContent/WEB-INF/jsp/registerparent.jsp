@@ -4,6 +4,19 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<script>
+	function validate(frm) {
+		if (frm.login.value == "") {
+			alert("Login is required...");
+			return false;
+		}
+		if (frm.password.value == "") {
+			alert("Password is required...");
+			return false;
+		}
+		return true;
+	}
+</script>
 <style>
 * {
 	margin: 10px;
@@ -11,6 +24,8 @@
 </style>
 </head>
 <body>
+	<jsp:include page="/mainmenu.jsp"></jsp:include>
+
 	<h2>Register Parent</h2>
 	<form action="register" method="post">
 		<div>
@@ -25,6 +40,9 @@
 			</div>
 			<div>
 				<label>Cellno</label> <input type='text' name='cellno'>
+			</div>
+			<div>
+				<h6 style="color: red">${msg}</h6>
 			</div>
 			<div>
 				<button>Next>></button>

@@ -31,7 +31,7 @@
 		<property name="url"
 			value="jdbc:mysql://localhost:3306/onlinetutorapp" />
 		<property name="username" value="root"></property>
-		<property name="password" value="Owaratwa77$123"></property>
+		<property name="password" value="Frugalwhacker7945"></property>
 	</bean>
 
 	<bean id="jdbcTemplate"

@@ -45,7 +45,7 @@ public class ParentDAOImpl implements ParentDAO{
 	}
 
 	@Override
-	public boolean check(Parent parent) {
+	public boolean checkLogin(Parent parent) {
 		Object params[] = { parent.getEmail(), parent.getPassword() };
 		int n = jdbcTemplate.queryForObject("select count(*) from parents where email = ? and password=?  ",
 				Integer.class, params);

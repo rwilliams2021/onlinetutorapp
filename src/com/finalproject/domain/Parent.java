@@ -5,7 +5,7 @@ public class Parent {
 	private String name;
 	private String email;
 	private String password;
-	private int cellno;
+	private String cellno;
 		
 	public Parent() {
 
@@ -19,11 +19,11 @@ public class Parent {
 		this.password = password;
 	}
 
-	public int getCellno() {
+	public String getCellno() {
 		return cellno;
 	}
 
-	public void setCellno(int cellno) {
+	public void setCellno(String cellno) {
 		this.cellno = cellno;
 	}
 
