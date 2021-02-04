@@ -5,9 +5,19 @@ public class Tutor {
 	private int id; 
 	private String name; 
 	private String email; 
-	private int cell_number;
+	private String cell_number;
 	
-	
+
+	public String getCell_number() {
+		return cell_number;
+	}
+
+
+	public void setCell_number(String cell_number) {
+		this.cell_number = cell_number;
+	}
+
+
 	public Tutor() {
 		// TODO Auto-generated constructor stub
 		}
@@ -43,14 +53,6 @@ public class Tutor {
 	}
 
 
-	public int getCell_number() {
-		return cell_number;
-	}
-
-
-	public void setCell_number(int cell_number) {
-		this.cell_number = cell_number;
-	} 
 	
 	
 

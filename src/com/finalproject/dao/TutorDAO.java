@@ -11,5 +11,6 @@ public interface TutorDAO {
 	
 	public int add(Tutor tutor);
 	public List<Tutor> findAll();
-
+	public int update(Tutor tutor);
+	public int delete(int id);
 }

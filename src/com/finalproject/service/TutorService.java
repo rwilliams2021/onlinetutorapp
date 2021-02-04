@@ -1,3 +1,4 @@
+
 package com.finalproject.service;
 
 import java.util.List;
@@ -13,4 +14,6 @@ public interface TutorService {
 
 	public int add(Tutor tutor);
 	public List<Tutor> getAll();
+	public int update(Tutor tutor);
+	public int remove(int id);
 }

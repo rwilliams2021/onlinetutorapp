@@ -32,5 +32,18 @@ public class TutorServiceImpl implements TutorService {
 	public List<Tutor> getAll() {
 		return tutorDAO.findAll();
 	}
+	
+	@Override
+	public int update(Tutor tutor) {
+		int n = tutorDAO.update(tutor);
+		return n;
+		
+		
+	}
+	@Override
+	public int remove(int id) {
+		int n = tutorDAO.delete(id);
+		return n;
+	}
 
 }

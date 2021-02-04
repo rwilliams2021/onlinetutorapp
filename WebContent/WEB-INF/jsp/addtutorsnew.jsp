@@ -16,7 +16,7 @@
 <table>
 <tr>
 <td>Id:</td>
-<td> <input type="number" name="id"> </td>
+<td> <input type="text" name="id"> </td>
 </tr>
 <tr>
 <td>Name:</td>
@@ -30,7 +30,7 @@
 <td>Cell Number</td>
 <td> <input type="text" name="cell_number"> </td>
 </tr>
-<input type="hidden" name="requestType" value="addtutors"/>
+<input type="hidden" name="requestType" value="addtutorsnew"/>
 <tr>
 <td> <input type="submit"> <td>
 <tr>

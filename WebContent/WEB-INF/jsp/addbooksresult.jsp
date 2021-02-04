@@ -9,13 +9,13 @@
 </head>
 <body>
 	<h2>Insertion Successful</h2>
-	Following Tutor is inserted in Database:
+	The Following Book is inserted in Database:
 	<br>
 	
-	<form action="addtutors" method="post">
+	<form action="addbooks" method="post">
 	<br>
 <div>${msg}</div>
 		<br>
-		<a href="tutor?requestType=tutor">Tutors List</a>
+		<a href="book?requestType=book">Book List</a>
 </body>
 </html>
