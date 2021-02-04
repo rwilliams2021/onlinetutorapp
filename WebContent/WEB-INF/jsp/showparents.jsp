@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
+ 
 	<jsp:include page="/adminmenudummy.jsp"></jsp:include>
 	<h2>Parent List</h2>
 
