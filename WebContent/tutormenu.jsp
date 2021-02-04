@@ -1,7 +1,7 @@
 
 <table width="400px">
 	<tr>
-		<td><a href="index.jsp">Home</a></td>
+		<td><a href="tutormenu.jsp">Home</a></td>
 		<td><a href="login">Admin Login</a></td>
 		<td><a href="logintutor">Tutor Login</a></td>
 		<td><a href="register">Parent Registration</a></td>
@@ -10,6 +10,6 @@
 
 
 
-		<th><a href="logincontroller.do?action=logout">Logout</a></th>
+		<th><a href="logout">Logout</a></th>
 	</tr>
 </table>

@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<jsp:include page="mainmenu.jsp"></jsp:include>
+	<jsp:include page="indexmenu.jsp"></jsp:include>
 	<h2>
 		Welcome to Online Tutor App
 		<c:if test="${login == null}">Guest</c:if>
