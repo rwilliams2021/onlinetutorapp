@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.finalproject.domain.Parent;
+import com.finalproject.domain.Tutor;
 import com.finalproject.service.ParentService;
 
 @Controller
@@ -78,15 +79,16 @@ public class ParentController {
 		p.setEmail(email);
 		p.setPassword(password);
 		if (parentService.check(p)) {
+			int id = parentService.getByEmail(email);
+			session.setAttribute("id", id);
 			session.setAttribute("email", email);
-			// parentService.updateCart(session.getId(), email); //possibly updatetutor here
-			// instead
 			return "parenthome";
 		} else {
 			model.addAttribute("msg", "Invalid email/password");
 			return "loginparent";
 		}
 	}
+
 
 	public void setParentService(ParentService parentService) {
 		this.parentService = parentService;

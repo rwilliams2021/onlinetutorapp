@@ -12,39 +12,32 @@
 </head>
 <body>
 
-	<jsp:include page="/adminmenu.jsp"></jsp:include>
+	<jsp:include page="/parentmenu.jsp"></jsp:include>
 	<h2>Tutor List</h2>
-	<form action="deletetutor" method="post">
+	<form action="addbooking" method="post">
 		<table class="clist">
 			<tr>
 				<td class="col">Id</td>
 				<td class="col">Name</td>
 				<td class="col">Email</td>
 				<td class="col">Cell Number</td>
-
 				<c:forEach items="${tutor}" var="t">
 
+
 					<tr>
-						<td class="col">${t.getId()}<input type="hidden" name="id"
+						<td class="col">${t.getId()}<input type="hidden" name="tutorid"
 							value="${t.getId()}"></td>
 						<td class="col">${t.getName()}</td>
 						<td class="col">${t.getEmail()}</td>
 						<td class="col">${t.getCell_number()}</td>
-						<td class="col"><button>
-								<a href="updatetutor?requestType=updatetutor">Update</a>
-							</button></td>
-						<td class="col"><button>Delete</button></td>
-
+						<td class="col"><button>Add</button></td>
+<!-- 						<td class="col"><button>Request Demo</button></td> -->
 					</tr>
-					<div>
-						<h6 style="color: red">${msg}</h6>
-					</div>
+
+
+
 				</c:forEach>
 		</table>
 	</form>
-	<form action="addtutors" method="get">
-		<button>Add New Tutor</button>
-	</form>
-
 </body>
 </html>

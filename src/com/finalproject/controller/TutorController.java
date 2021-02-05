@@ -38,7 +38,21 @@ public class TutorController {
 	public String getTutors(Model model) {
 		List<Tutor> tutor =  tutorService.getAll();
 		model.addAttribute("tutor", tutor);
-		return "showtutors";
+		return "adminshowtutors";
+		
+	}
+	@RequestMapping(value = "/tutors",method = RequestMethod.GET)
+	public String getTutorsParent(Model model) {
+		List<Tutor> tutor =  tutorService.getAll();
+		model.addAttribute("tutor", tutor);
+		return "parentshowtutors";
+		
+	}
+	@RequestMapping(value = "/profile",method = RequestMethod.GET)
+	public String getTutorById(HttpSession session, Model model) {
+		List<Tutor> tutor =  tutorService.getByIdl((Integer)session.getAttribute("id"));
+		model.addAttribute("tutor", tutor);
+		return "tutorprofile";
 		
 	}
 
@@ -58,6 +72,7 @@ public class TutorController {
 		Tutor t = new Tutor();
 		t.setName(name);
 		t.setEmail(email);
+		t.setPassword(password);
 		t.setCell_number(cell_number);
 		int n = tutorService.add(t);
 		if(n>0)
@@ -90,17 +105,17 @@ public class TutorController {
 	
 	
 	@RequestMapping(value = "/deletetutor", method = RequestMethod.POST)
-	public String deleteTutor(int id, Model model) {
-		int n = tutorService.remove(id);
+	public String deleteTutor(int pid, Model model) {
+		int n = tutorService.remove(pid);
 		
 		List<Tutor> tutor =  tutorService.getAll();
 		model.addAttribute("tutor", tutor);
 		if(n>0) {
-			return "showtutors";
+			return "adminshowtutors";
 		}
 		else {
 			model.addAttribute("msg", "Failed to delete tutor");
-			return "showtutors";
+			return "adminshowtutors";
 		}
 	}
 	
@@ -115,6 +130,8 @@ public class TutorController {
 		t.setEmail(email);
 		t.setPassword(password);
 		if (tutorService.check(t)) {
+			int id = tutorService.getByEmail(email);
+			session.setAttribute("id", id);
 			session.setAttribute("email", email);
 			return "tutorhome";
 		} else {

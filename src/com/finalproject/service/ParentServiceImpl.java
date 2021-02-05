@@ -45,4 +45,9 @@ public class ParentServiceImpl implements ParentService{
 		return parentDAO.checkLogin(parent);
 	}
 
+	@Override
+	public int getByEmail(String email) {
+		return parentDAO.findByEmail(email);
+	}
+
 }

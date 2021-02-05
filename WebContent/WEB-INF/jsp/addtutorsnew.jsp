@@ -16,10 +16,6 @@
 	<form action="addtutors" method="post">
 		<table>
 			<tr>
-				<td>Id:</td>
-				<td><input type="text" name="id"></td>
-			</tr>
-			<tr>
 				<td>Name:</td>
 				<td><input type="text" name="name"></td>
 			</tr>

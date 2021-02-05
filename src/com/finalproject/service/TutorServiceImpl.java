@@ -49,5 +49,13 @@ public class TutorServiceImpl implements TutorService {
 	public boolean check(Tutor tutor) {
 		return tutorDAO.checkLogin(tutor);
 	}
+	@Override
+	public List<Tutor> getByIdl(int id) {
+		return tutorDAO.findById(id);
+	}
+	@Override
+	public int getByEmail(String email) {
+		return tutorDAO.findByEmail(email);
+	}
 
 }
