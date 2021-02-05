@@ -45,5 +45,9 @@ public class TutorServiceImpl implements TutorService {
 		int n = tutorDAO.delete(id);
 		return n;
 	}
+	@Override
+	public boolean check(Tutor tutor) {
+		return tutorDAO.checkLogin(tutor);
+	}
 
 }

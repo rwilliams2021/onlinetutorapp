@@ -51,9 +51,21 @@ public class TutorDAOImpl implements TutorDAO {
 		int n = jdbcTemplate.update(sql, params);
 		return n;	
 	}
+
+
+	@Override
+	public boolean checkLogin(Tutor tutor) {
+		Object params[] = { tutor.getEmail(), tutor.getPassword() };
+		int n = jdbcTemplate.queryForObject("select count(*) from tutors where email = ? and password=?  ",
+				Integer.class, params);
+		if (n == 0)
+			return false;
+		else
+			return true;		
+	}
 		
 	}
-
+	
 
 	
 

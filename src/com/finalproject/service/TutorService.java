@@ -16,4 +16,5 @@ public interface TutorService {
 	public List<Tutor> getAll();
 	public int update(Tutor tutor);
 	public int remove(int id);
+	public boolean check(Tutor tutor);
 }

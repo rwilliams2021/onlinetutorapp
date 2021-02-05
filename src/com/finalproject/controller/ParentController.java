@@ -81,7 +81,7 @@ public class ParentController {
 			session.setAttribute("email", email);
 			// parentService.updateCart(session.getId(), email); //possibly updatetutor here
 			// instead
-			return "parentloggedin";
+			return "parenthome";
 		} else {
 			model.addAttribute("msg", "Invalid email/password");
 			return "loginparent";

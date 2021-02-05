@@ -9,7 +9,7 @@
 </head>
 <body>
 <h2>Login Page</h2>
-<jsp:include page="/mainmenu.jsp"></jsp:include>
+<jsp:include page="/indexmenu.jsp"></jsp:include>
 	<form action="login" method="post">
 
 		<div>

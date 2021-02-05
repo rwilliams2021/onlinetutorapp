@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.finalproject.domain.Parent;
 import com.finalproject.domain.Tutor;
 import com.finalproject.service.TutorService;
 
@@ -107,7 +109,24 @@ public class TutorController {
 	return "showtutors"; 
 		}
 	
-	
+	@RequestMapping(value = "/logintutor", method = RequestMethod.GET)
+	public String doLogin() {
+		return "logintutor";
+	}
+
+	@RequestMapping(value = "/logintutor", method = RequestMethod.POST)
+	public String doCheck(String email, String password, HttpSession session, Model model) {
+		Tutor t = new Tutor();
+		t.setEmail(email);
+		t.setPassword(password);
+		if (tutorService.check(t)) {
+			session.setAttribute("email", email);
+			return "tutorhome";
+		} else {
+			model.addAttribute("msg", "Invalid email/password");
+			return "logintutor";
+		}
+	}
 	
 	
 	
