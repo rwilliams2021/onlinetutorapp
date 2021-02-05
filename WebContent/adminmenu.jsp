@@ -1,8 +1,8 @@
 <table width="400px">
 	<tr>
 		<td><a href="adminhome.jsp">Home</a></td>
-		<td><a href="tutors">List Tutors</a></td>
-		<td><a href="books">List Books</a></td>
+		<td><a href="tutor">List Tutors</a></td>
+		<td><a href="book">List Books</a></td>
 		<td><a href="parents">List Parents</a></td>
 
 
