@@ -54,6 +54,13 @@ public class ParentDAOImpl implements ParentDAO{
 		else
 			return true;
 	}
+
+	@Override
+	public int findByEmail(String email) {
+		Object params[] = { email };
+		return jdbcTemplate.queryForObject("select id from parents where email = ?",
+				Integer.class, params);
+	}
 	
 	
 }

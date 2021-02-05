@@ -4,9 +4,11 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<title>Login</title>
+
 <script>
 	function validate(frm) {
-		if (frm.login.value == "") {
+		if (frm.email.value == "") {
 			alert("Login is required...");
 			return false;
 		}
@@ -17,37 +19,36 @@
 		return true;
 	}
 </script>
-<style>
-* {
-	margin: 10px;
-}
-</style>
-</head>
-<body>
-	<jsp:include page="/indexmenu.jsp"></jsp:include>
 
-	<h2>Register Parent</h2>
-	<form action="register" method="post">
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<jsp:include page="/indexmenu.jsp"></jsp:include>
+<body>
+	<h2>Login Tutor</h2>
+
+	<form action="logintutor" method="post">
+
 		<div>
 			<div>
-				<label>Name</label> <input type='text' name='name'>
+				<label>Email</label> <input type="text" name="email">
 			</div>
 			<div>
-				<label>Email</label> <input type='text' name='email'>
-			</div>
-			<div>
-				<label>Password</label> <input type='text' name='password'>
-			</div>
-			<div>
-				<label>Cellno</label> <input type='text' name='cellno'>
+				<label>Password</label> <input type="password" name="password">
 			</div>
 			<div>
 				<h6 style="color: red">${msg}</h6>
 			</div>
 			<div>
+
 				<button>Next>></button>
 			</div>
 		</div>
+
 	</form>
 </body>
 </html>
+
+

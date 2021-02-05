@@ -33,7 +33,7 @@ public class LoginController {
 		if(adminService.check(a))
 		{
 			session.setAttribute("username", username);
-			return "redirect:/adminhome";
+			return "adminhome";
 		}
 		else 
 		{

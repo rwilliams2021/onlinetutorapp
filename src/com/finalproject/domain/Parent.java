@@ -1,11 +1,14 @@
 package com.finalproject.domain;
 
+import java.util.List;
+
 public class Parent {
 	private int id;
 	private String name;
 	private String email;
 	private String password;
 	private String cellno;
+
 		
 	public Parent() {
 
