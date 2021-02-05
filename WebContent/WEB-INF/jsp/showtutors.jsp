@@ -14,7 +14,7 @@
 
 	<jsp:include page="/adminmenu.jsp"></jsp:include>
 	<h2>Tutor List</h2>
-	<form action="addtutors" method="get">
+	<form action="deletetutor" method="post">
 		<table class="clist">
 			<tr>
 				<td class="col">Id</td>
@@ -33,20 +33,17 @@
 						<td class="col"><button>
 								<a href="updatetutor?requestType=updatetutor">Update</a>
 							</button></td>
+						<td class="col"><button>Delete</button></td>
 
-						<form action="deleteparent" method="post">
-
-							<td class="col"><button>
-									<a href="deletetutor?action=delete&id=${t.getId()}">Delete</a>
-								</button></td>
 					</tr>
 					<div>
 						<h6 style="color: red">${msg}</h6>
 					</div>
-					</form>
 				</c:forEach>
-				<button>Add New Tutor</button>
 		</table>
+	</form>
+	<form action="addtutors" method="get">
+		<button>Add New Tutor</button>
 	</form>
 
 </body>

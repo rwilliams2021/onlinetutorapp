@@ -103,11 +103,6 @@ public class TutorController {
 			return "showtutors";
 		}
 	}
-
-	@RequestMapping(value = "/deletetutor", method = RequestMethod.GET)
-	public String delete(Model model) {
-	return "showtutors"; 
-		}
 	
 	@RequestMapping(value = "/logintutor", method = RequestMethod.GET)
 	public String doLogin() {
