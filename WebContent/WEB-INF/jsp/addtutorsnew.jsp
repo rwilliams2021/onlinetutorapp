@@ -33,6 +33,9 @@
 			</tr>
 			<input type="hidden" name="requestType" value="addtutorsnew" />
 			<tr>
+				<div>
+					<h6 style="color: red">${msg}</h6>
+				</div>
 				<td><input type="submit">
 				<td>
 			<tr>
