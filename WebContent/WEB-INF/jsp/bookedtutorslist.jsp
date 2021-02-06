@@ -14,28 +14,30 @@
 
 	<jsp:include page="/parentmenu.jsp"></jsp:include>
 	<h2>Booked Tutor List</h2>
-	
-	<table class="clist">
-		<tr>
-			<td class="col">Id</td>
-			<td class="col">Name</td>
-			<td class="col">Email</td>
-			<td class="col">Cell Number</td>
+	<div>
+		<h6 style="color: red">${msg}</h6>
+	</div>
+	<form action="tutorsbooked" method="get">
 
-			<c:forEach items="${tutor}" var="t">
-				<form action="bookedtutorslist" method="post">
-				<tr>
-					<td class="col">${t.getId()}<input type="hidden" name="pid"
-						value="${t.getId()}"></td>
-					<td class="col">${t.getName()}</td>
-					<td class="col">${t.getEmail()}</td>
-					<td class="col">${t.getCell_number()}</td>
-					
+		<table class="clist">
+			<tr>
+				<td class="col">Id</td>
+				<td class="col">Name</td>
+				<td class="col">Email</td>
+				<td class="col">Cell Number</td>
 
-				
 
-			</c:forEach>
-	</table>
-	
+				<c:forEach items="${tutor}" var="t">
+					<tr>
+						<td class="col">${t.getId()}<input type="hidden" name="id"
+							value="${t.getId()}"></td>
+						<td class="col">${t.getName()}</td>
+						<td class="col">${t.getEmail()}</td>
+						<td class="col">${t.getCell_number()}</td>
+					</tr>
+				</c:forEach>
+		</table>
+	</form>
+
 </body>
 </html>
