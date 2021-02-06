@@ -57,11 +57,26 @@ public class ParentController {
 			p.setEmail(email);
 			p.setPassword(password);
 			p.setCellno(cellno);
-			int n = parentService.add(p);
-			if (n > 0)
-				return "parentlogin";
-			else
+			List<Parent> parents = parentService.getAll();
+			boolean exists = false;
+			for(Parent par: parents) {
+				if(par.getEmail().equals(email)) {
+					exists = true;
+					System.out.println("exists is: " + exists);
+					break;
+				}
+			}
+			System.out.println("exists is: " + exists);
+			if(!exists) {
+				int n = parentService.add(p);
+				if (n > 0)
+					return "loginparent";
+				else
+					return "registerparent";
+			}else {
+				model.addAttribute("msg", "Parent already exists");
 				return "registerparent";
+			}
 		} else {
 			model.addAttribute("msg", "Please fill in all fields");
 			return "registerparent";
