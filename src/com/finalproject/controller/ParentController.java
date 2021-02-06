@@ -59,7 +59,7 @@ public class ParentController {
 			p.setCellno(cellno);
 			int n = parentService.add(p);
 			if (n > 0)
-				return "parentlogin";
+				return "loginparent";
 			else
 				return "registerparent";
 		} else {
