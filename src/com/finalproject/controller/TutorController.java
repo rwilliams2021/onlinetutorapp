@@ -74,11 +74,15 @@ public class TutorController {
 		t.setEmail(email);
 		t.setPassword(password);
 		t.setCell_number(cell_number);
-		int n = tutorService.add(t);
-		if(n>0)
-			model.addAttribute("msg", "Name: " + name +  "  ,  "  + "Email: "  + email +  "  ,  " + "Password: "  + password +  "  ,  " + "Cell Number: " + cell_number);
-			return "addtutorsresult";
-		
+		try {
+			int n = tutorService.add(t);
+			if(n>0)
+				model.addAttribute("msg", "Name: " + name +  "  ,  "  + "Email: "  + email +  "  ,  " + "Password: "  + password +  "  ,  " + "Cell Number: " + cell_number);
+				return "addtutorsresult";
+		}catch(Exception e){
+			model.addAttribute("msg","Email already exists");
+			return "addtutorsnew";
+		}
 	}
 	
 
