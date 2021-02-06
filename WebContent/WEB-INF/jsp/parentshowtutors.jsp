@@ -30,7 +30,7 @@
 						<td class="col">${t.getName()}</td>
 						<td class="col">${t.getEmail()}</td>
 						<td class="col">${t.getCell_number()}</td>
-						<td class="col"><button>Add</button></td>
+						<td class="col"><button>Book Tutor</button></td>
 <!-- 						<td class="col"><button>Request Demo</button></td> -->
 					</tr>
 

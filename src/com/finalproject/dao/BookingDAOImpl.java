@@ -7,6 +7,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.finalproject.domain.Booking;
+import com.finalproject.domain.Tutor;
 
 
 @Repository
@@ -39,4 +40,10 @@ public class BookingDAOImpl implements BookingDAO {
 		return n;
 	}
 	
+	@Override
+	public List<Booking> findById(int id) {
+		String sql = "select tutorid from bookings where parentid = ?";
+		Object params[] = { id };
+		return jdbcTemplate.query(sql, new BeanPropertyRowMapper<Booking>(Booking.class), params);
+	}
 }
