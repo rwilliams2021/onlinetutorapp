@@ -9,5 +9,5 @@ public interface BookingService {
 	public int add(Booking booking);
 	public List<Booking> getAll();
 	public int update(Booking booking);
-
+	public List<Booking> findById(int id);
 }

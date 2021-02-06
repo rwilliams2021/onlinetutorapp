@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.finalproject.domain.Booking;
 import com.finalproject.domain.Parent;
+import com.finalproject.domain.Tutor;
 import com.finalproject.service.BookingService;
 import com.finalproject.service.ParentService;
 import com.finalproject.service.TutorService;
@@ -23,7 +24,8 @@ public class BookingController {
 	
 	@Autowired
 	private BookingService bookingService;
-
+	@Autowired
+	private TutorService tutorService;
 	
 	public void setBookingService(BookingService bookingService) {
 		this.bookingService = bookingService;
@@ -42,8 +44,17 @@ public class BookingController {
 		Booking b = new Booking();
 		b.setParentid((Integer)session.getAttribute("id"));
 		b.setTutorid(tutorid);
-
 		bookingService.add(b);
+		return "bookedtutorslist";
+	}
+	
+
+		@RequestMapping(value = "/tutorsbooked", method = RequestMethod.POST)
+		public String bookingslist(int tutorid, HttpSession session, Model model) {
+		List<Booking> bookings = bookingService.findById((Integer)session.getAttribute("id"));
+			return "bookedtutorslist";
+				
+		
 		
 		/*
 		 * if( n > 0)
@@ -52,8 +63,7 @@ public class BookingController {
 		 * "Duration In Hours: " + duration_in_hours + " ," + "Sessions Per Week: " +
 		 * times_per_week + " ," + "Name: " + name + " ," + "Email Address: " + email +
 		 * " ," + "Cell Number" + cell_number);
-		 */
-		return "";
+		
 	
 	}
 	
@@ -82,7 +92,7 @@ public class BookingController {
 		 * "Sessions Per Week: " + times_per_week + " ," + "Name: " + name + " ," +
 		 * "Email Address: " + email + " ," + "Cell Number" + cell_number);
 		 */
-		return "updatebookingresults";
+		//return "updatebookingresults";
 	
 	}
 	
