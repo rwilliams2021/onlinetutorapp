@@ -42,7 +42,7 @@ public class BookingController {
 		b.setParentid((Integer) session.getAttribute("id"));
 		b.setTutorid(tutorid);
 		bookingService.add(b);
-		return "bookedtutorslist";
+		return "redirect:/tutorsbooked";
 	}
 
 	@RequestMapping(value = "/tutorsbooked", method = RequestMethod.GET)
