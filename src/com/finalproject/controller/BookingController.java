@@ -23,12 +23,7 @@ public class BookingController {
 	
 	@Autowired
 	private BookingService bookingService;
-	
-	@Autowired
-	private ParentService parentService;
-	
-	@Autowired
-	private TutorService tutorService;
+
 	
 	public void setBookingService(BookingService bookingService) {
 		this.bookingService = bookingService;
