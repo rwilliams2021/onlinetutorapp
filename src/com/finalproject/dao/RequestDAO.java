@@ -10,4 +10,5 @@ public interface RequestDAO {
 	public List<Request> findAll();
 	
 	public int update(Request request);
+	public List<Request> findById(int id);
 }

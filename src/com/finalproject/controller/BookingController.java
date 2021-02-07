@@ -61,7 +61,8 @@ public class BookingController {
 			}
 		}
 		model.addAttribute("tutor", tutor);
-		return "bookedtutorslist";	}
+		return "bookedtutorslist";	
+	}
 
 	@RequestMapping(value = "/updatebooking", method = RequestMethod.GET)
 	public String updateBooking(Model model) {

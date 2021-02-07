@@ -8,4 +8,5 @@ public interface RequestService {
 	public int add(Request request);
 	public List<Request> getAll();
 	public int update(Request request);
+	public List<Request> findById(int id);
 }

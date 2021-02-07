@@ -32,10 +32,17 @@ public class RequestDAOImpl implements RequestDAO{
 
 	@Override
 	public int update(Request request) {
-		String sql = "update bookings set subject=?, duration_in_hours=?, times_per_week=?, email=?, cell_number=? where id=?";
+		String sql = "update requests set subject=?, duration_in_hours=?, times_per_week=?, email=?, cell_number=? where id=?";
 		Object params[] = {};
 		int n = jdbcTemplate.update(sql,params);
 		return n;
+	}
+
+	@Override
+	public List<Request> findById(int id) {
+		String sql = "select tutorid from requests where parentid = ?";
+		Object params[] = { id };
+		return jdbcTemplate.query(sql, new BeanPropertyRowMapper<Request>(Request.class), params);
 	}
 
 }
