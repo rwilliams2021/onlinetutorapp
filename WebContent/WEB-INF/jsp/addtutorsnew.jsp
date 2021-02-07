@@ -31,6 +31,10 @@
 				<td>Cell Number</td>
 				<td><input type="text" name="cell_number"></td>
 			</tr>
+			<tr>
+				<td>Location</td>
+				<td><input type="text" name="location"></td>
+			</tr>
 			<input type="hidden" name="requestType" value="addtutorsnew" />
 			<tr>
 				<div>

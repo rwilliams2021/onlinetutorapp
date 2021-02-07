@@ -21,6 +21,8 @@
 			<td class="col">Name</td>
 			<td class="col">Email</td>
 			<td class="col">Cell Number</td>
+			<td class="col">Location</td>
+
 			<c:forEach items="${tutor}" var="t">
 
 				<tr>
@@ -29,7 +31,7 @@
 					<td class="col">${t.getName()}</td>
 					<td class="col">${t.getEmail()}</td>
 					<td class="col">${t.getCell_number()}</td>
-
+					<td class="col">${t.getLocation}</td>
 				</tr>
 			</c:forEach>
 	</table>
