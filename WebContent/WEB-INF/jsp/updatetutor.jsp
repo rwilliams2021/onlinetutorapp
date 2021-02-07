@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1" import="com.finalproject.domain.*"%>
-	<%@taglib
-	uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,27 +8,30 @@
 <title>Insert title here</title>
 </head>
 <body>
+
 	<h2>Update Tutor Details</h2>
 	<form action="updatetutor" method="post">
 		<table>
 			<tr>
 				<td>Tutor Id:</td>
-				<td><input type="text" name="id" value=${t.getId}></td>
+				<td><input type="text" name="id"></td>
 			</tr>
 			<tr>
 				<td>Tutor Name:</td>
-				<td><input type="text" name="name" value=${t.getName}>
-				</td>
+				<td><input type="text" name="name"></td>
 			</tr>
 			<tr>
 				<td>Email:</td>
-				<td><input type="text" name="email" value=${t.getEmail}>
+				<td><input type="text" name="email">
 				</td>
 			</tr>
 			<tr>
+				<td>Password:</td>
+				<td><input type="text" name="password"></td>
+			</tr>
+			<tr>
 				<td>Cell Number:</td>
-				<td><input type="text" name="cell_number" value=${t.getCell_number}>
-				</td>
+				<td><input type="text" name="cell_number"></td>
 			</tr>
 			<input type="hidden" name="requestType" value="updatetutor" />
 			<tr>

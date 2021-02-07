@@ -31,8 +31,8 @@ public class TutorDAOImpl implements TutorDAO {
 
 	@Override
 	public int update(Tutor tutor) {
-		String sql = "update tutors set name=?, email=?, cell_number=? where id=?";
-		Object params[] = { tutor.getName(), tutor.getEmail(), tutor.getCell_number(), tutor.getId() };
+		String sql = "update tutors set name=?, email=?, password=?, cell_number=? where id=?";
+		Object params[] = { tutor.getName(), tutor.getEmail(),tutor.getPassword(), tutor.getCell_number(), tutor.getId() };
 		int n = jdbcTemplate.update(sql, params);
 		return n;
 	}

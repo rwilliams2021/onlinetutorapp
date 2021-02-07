@@ -88,29 +88,31 @@ public class TutorController {
 
 	
 	@RequestMapping(value = "/updatetutor",method = RequestMethod.POST)
-	public String update(String id, String name, String email, String cell_number, Model model) {
+	public String update(String id, String name, String email,String password, String cell_number, Model model) {
 		Tutor t = new Tutor();
 		t.setId(Integer.parseInt(id));
 		t.setName(name);
 		t.setEmail(email);
+		t.setPassword(password);
 		t.setCell_number(cell_number);
 		int n = tutorService.update(t);
 		if(n>0)
-			model.addAttribute("msg", "Name: " + name +  "  ,  "  + "Email: "  + email +  "  ,  "  + "Cell Number: " + cell_number);
+			model.addAttribute("msg", "Name: " + name +  "  ,  "  + "Email: "  + email +  
+					"  ,  "  + "Cell Number: " + cell_number);
 			return "updatetutorresult";
 			
 	}
 	
 	@RequestMapping(value = "/updatetutor", method = RequestMethod.GET)
-	public String updateTutorsResult(Model model) {
+	public String updateTutorsResult() {
 	return "updatetutor"; 
 	
 	}
 	
 	
 	@RequestMapping(value = "/deletetutor", method = RequestMethod.POST)
-	public String deleteTutor(int pid, Model model) {
-		int n = tutorService.remove(pid);
+	public String deleteTutor(int tid, Model model) {
+		int n = tutorService.remove(tid);
 		
 		List<Tutor> tutor =  tutorService.getAll();
 		model.addAttribute("tutor", tutor);

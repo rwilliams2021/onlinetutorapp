@@ -23,17 +23,21 @@
 			<td class="col">Cell Number</td>
 		</tr>
 		<c:forEach items="${tutor}" var="t">
-			<form action="deletetutor" method="post">
+			<form>
 				<tr>
-					<td class="col">${t.getId()}<input type="hidden" name="pid"
-						value="${t.getId()}"></td>
-					<td class="col">${t.getName()}</td>
-					<td class="col">${t.getEmail()}</td>
-					<td class="col">${t.getCell_number()}</td>
-					<td class="col"><button>
-							<a href="updatetutor?requestType=updatetutor">Update</a>
-						</button></td>
-					<td class="col"><button>Delete</button></td>
+					<td class="col">${t.getId()}<input type="hidden"
+						name="tid" value="${t.getId()}"></td>
+					<td class="col">${t.getName()}<input type="hidden"
+						name="name" value="${t.getName()}"></td>
+
+					<td class="col">${t.getEmail()}<input type="hidden"
+						name="email" value="${t.getEmail()}"></td>
+						
+					<td class="col">${t.getCell_number()}<input type="hidden"
+						name="cell_number" value="${t.getCell_number()}"></td>
+						
+					<td class="col"><button formaction="updatetutor" formmethod="get">Update</button></td>
+					<td class="col"><button formaction="deletetutor" formmethod="post">Delete</button></td>
 
 				</tr>
 				<div>
