@@ -10,7 +10,7 @@
 <body>
 <h2>Login Page</h2>
 <jsp:include page="indexmenu.jsp"></jsp:include>
-	<form action="login" method="post">
+	<form action="loginadmins" method="post">
 
 		<div>
 			<div>

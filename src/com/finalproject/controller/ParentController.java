@@ -44,7 +44,6 @@ public class ParentController {
 
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
 	public String registerParents() {
-		;
 		return "registerparent";
 	}
 
@@ -79,7 +78,7 @@ public class ParentController {
 	}
 
 	@RequestMapping(value = "/loginparents", method = RequestMethod.POST)
-	public String doCheck(String email, String password, HttpSession session, Model model) {
+	public String doLogin2(String email, String password, HttpSession session, Model model) {
 		Parent p = new Parent();
 		p.setEmail(email);
 		p.setPassword(password);
