@@ -23,15 +23,15 @@
 			<td class="col">Cell Number</td>
 		</tr>
 		<c:forEach items="${tutor}" var="t">
-			<form action="addbooking" method="post">
+			<form method="post">
 				<tr>
-					<td class="col">${t.getId()}<input type="hidden" name="tutorid"
-						value="${t.getId()}"></td>
+					<td class="col">${t.getId()}<input type="hidden"
+						name="tutorid" value="${t.getId()}"></td>
 					<td class="col">${t.getName()}</td>
 					<td class="col">${t.getEmail()}</td>
 					<td class="col">${t.getCell_number()}</td>
-					<td class="col"><button>Book</button></td>
-
+					<td class="col"><button formaction="addbooking">Book</button></td>
+					<td class="col"><button formaction="addrequest">Request Demo</button></td>
 				</tr>
 				<div>
 					<h6 style="color: red">${msg}</h6>

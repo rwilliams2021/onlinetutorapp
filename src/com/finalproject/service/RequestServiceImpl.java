@@ -31,4 +31,9 @@ public class RequestServiceImpl implements RequestService{
 		return n;
 	}
 
+	@Override
+	public List<Request> findById(int id) {
+		return requestDAO.findById(id);
+	}
+
 }
