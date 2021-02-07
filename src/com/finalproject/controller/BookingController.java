@@ -75,7 +75,6 @@ public class BookingController {
 		List<Parent> parents = new ArrayList<Parent>();
 		for(Booking b : bookings) {
 			int parentid = b.getParentid();
-			System.out.println("parentid is:" + parentid);
 			List<Parent> plist = parentService.getByIdl(parentid); //return the parent from parent table with the parentid
 			//Access the parent from plist and add it to the parents list
 			for(Parent p : plist) {
