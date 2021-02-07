@@ -10,4 +10,5 @@ public interface BookingService {
 	public List<Booking> getAll();
 	public int update(Booking booking);
 	public List<Booking> findById(int id);
+	public List<Booking> findByTutorId(int id);
 }

@@ -44,4 +44,10 @@ public class BookingServiceImpl implements BookingService  {
 		return bookingDAO.findById(id);
 	}
 
+
+	@Override
+	public List<Booking> findByTutorId(int id) {
+		return bookingDAO.findByTutorid(id);
+	}
+
 }

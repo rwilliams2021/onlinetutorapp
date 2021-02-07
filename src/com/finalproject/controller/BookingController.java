@@ -25,6 +25,8 @@ public class BookingController {
 	private BookingService bookingService;
 	@Autowired
 	private TutorService tutorService;
+	@Autowired
+	private ParentService parentService;
 
 	public void setBookingService(BookingService bookingService) {
 		this.bookingService = bookingService;
@@ -62,6 +64,26 @@ public class BookingController {
 		}
 		model.addAttribute("tutor", tutor);
 		return "bookedtutorslist";	
+	}
+	
+	@RequestMapping(value = "/parentsbooked", method = RequestMethod.GET)
+	public String bookingslist2(HttpSession session, Model model) {
+		
+		//Get all bookings for the logged in parent
+		List<Booking> bookings = bookingService.findByTutorId((Integer)session.getAttribute("id")); 
+				
+		List<Parent> parents = new ArrayList<Parent>();
+		for(Booking b : bookings) {
+			int parentid = b.getParentid();
+			System.out.println("parentid is:" + parentid);
+			List<Parent> plist = parentService.getByIdl(parentid); //return the parent from parent table with the parentid
+			//Access the parent from plist and add it to the parents list
+			for(Parent p : plist) {
+				parents.add(p);
+			}
+		}
+		model.addAttribute("parents", parents);
+		return "bookedparentslist";	
 	}
 
 	@RequestMapping(value = "/updatebooking", method = RequestMethod.GET)

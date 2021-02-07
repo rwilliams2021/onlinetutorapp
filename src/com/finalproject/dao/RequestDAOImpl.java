@@ -45,4 +45,11 @@ public class RequestDAOImpl implements RequestDAO{
 		return jdbcTemplate.query(sql, new BeanPropertyRowMapper<Request>(Request.class), params);
 	}
 
+	@Override
+	public List<Request> findByTutorid(int id) {
+		String sql = "select parentid from requests where tutorid = ?";
+		Object params[] = { id };
+		return jdbcTemplate.query(sql, new BeanPropertyRowMapper<Request>(Request.class), params);
+	}
+
 }

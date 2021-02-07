@@ -24,7 +24,7 @@ public class ParentServiceImpl implements ParentService{
 	}
 
 	@Override
-	public Parent getByIdl(int id) {
+	public List<Parent> getByIdl(int id) {
 		return parentDAO.findById(id);
 	}
 

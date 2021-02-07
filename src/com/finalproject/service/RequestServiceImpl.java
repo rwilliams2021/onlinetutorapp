@@ -36,4 +36,9 @@ public class RequestServiceImpl implements RequestService{
 		return requestDAO.findById(id);
 	}
 
+	@Override
+	public List<Request> findByTutorId(int id) {
+		return requestDAO.findByTutorid(id);
+	}
+
 }

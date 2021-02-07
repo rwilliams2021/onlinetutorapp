@@ -21,11 +21,11 @@ public class ParentDAOImpl implements ParentDAO{
 	}
 
 	@Override
-	public Parent findById(int id) {
+	public List<Parent> findById(int id) {
 		String sql = "select * from parents where id = ?";
 		Object params[] = { id };		
 		
-		return jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<Parent>(Parent.class), params);	
+		return jdbcTemplate.query(sql, new BeanPropertyRowMapper<Parent>(Parent.class), params);	
 	}
 
 	@Override
