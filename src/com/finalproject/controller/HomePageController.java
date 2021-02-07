@@ -10,6 +10,10 @@ public class HomePageController {
 	public String goIndexHome() {
 		return "index";
 	}
+	@RequestMapping(value = "/indexhome", method = RequestMethod.GET)
+	public String goIndexHome2() {
+		return "index";
+	}
 	@RequestMapping(value = "/adminhome", method = RequestMethod.GET)
 	public String goAdminHome() {
 		return "adminhome";

@@ -10,10 +10,10 @@
 </head>
 <body>
 	<jsp:include page="indexmenu.jsp"></jsp:include>
-	<h2>
+	<h1>
 		Welcome to Online Tutor App
 		<c:if test="${id == null}">Guest</c:if>
 		<c:if test="${id != null}">${id}</c:if>
-	</h2>
+	</h1>
 </body>
 </html>
