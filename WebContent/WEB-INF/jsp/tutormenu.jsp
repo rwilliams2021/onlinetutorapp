@@ -6,6 +6,6 @@
 		<td><a href="demos">Demo Requests</a></td>
 		<td><a href="bookings">Bookings</a></td>
 
-		<th><a href="index.jsp">Logout</a></th>
+		<th><a href="logout">Logout</a></th>
 	</tr>
 </table>

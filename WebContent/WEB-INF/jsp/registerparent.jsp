@@ -24,7 +24,7 @@
 </style>
 </head>
 <body>
-	<jsp:include page="/indexmenu.jsp"></jsp:include>
+	<jsp:include page="indexmenu.jsp"></jsp:include>
 
 	<h2>Register Parent</h2>
 	<form action="register" method="post">

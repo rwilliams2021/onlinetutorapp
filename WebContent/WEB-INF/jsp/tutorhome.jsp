@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<jsp:include page="/tutormenu.jsp"></jsp:include>
+	<jsp:include page="tutormenu.jsp"></jsp:include>
 	<h1>Welcome tutor</h1>
 </body>
 </html>

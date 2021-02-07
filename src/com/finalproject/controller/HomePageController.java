@@ -6,6 +6,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class HomePageController {
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public String goIndexHome() {
+		return "index";
+	}
 	@RequestMapping(value = "/adminhome", method = RequestMethod.GET)
 	public String goAdminHome() {
 		return "adminhome";

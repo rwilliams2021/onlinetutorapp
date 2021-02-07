@@ -6,6 +6,6 @@
 		<td><a href="parents">List Parents</a></td>
 
 
-		<th><a href="index.jsp">Logout</a></th>
+		<th><a href="logout">Logout</a></th>
 	</tr>
 </table>

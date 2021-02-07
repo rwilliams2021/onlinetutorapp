@@ -6,6 +6,6 @@
 		<td><a href="tutorsbooked">Booked Tutors List</a></td>
 		<td><a href="book">EBooks</a></td>
 
-		<th><a href="index.jsp">Logout</a></th>
+		<th><a href="logout">Logout</a></th>
 	</tr>
 </table>
