@@ -47,24 +47,18 @@ public class BookingController {
 
 	@RequestMapping(value = "/tutorsbooked", method = RequestMethod.GET)
 	public String bookingslist(HttpSession session, Model model) {
-		List<Booking> bookings = bookingService.getAll();
+		
+		//Get all bookings for the logged in parent
+		List<Booking> bookings = bookingService.findById((Integer)session.getAttribute("id")); 
+				
 		List<Tutor> tutor = new ArrayList<Tutor>();
-		for (Booking b : bookings) {
-			if (b.getParentid() == (Integer) session.getAttribute("id")) {
-				Tutor t = new Tutor();
-				t.setId(b.getTutorid());
+		for(Booking b : bookings) {
+			int tutorid = b.getTutorid();
+			List<Tutor> tlist = tutorService.getByIdl(tutorid); //return the tutor from tutor table with the tutorid
+			//Access the tutor from tlist and add it to the tutor list
+			for(Tutor t : tlist) {
 				tutor.add(t);
 			}
-
-		}
-		List<Tutor> tutorList = new ArrayList<Tutor>();
-		for (Tutor t : tutor) {
-			int id = t.getId();
-			System.out.println("id" + id);
-			tutorList = tutorService.getByIdl(id);
-//			for(Tutor t : tutorList) {
-//				
-//			}
 		}
 		model.addAttribute("tutor", tutor);
 		return "bookedtutorslist";	}
