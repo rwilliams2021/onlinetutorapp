@@ -14,24 +14,26 @@
 
 	<jsp:include page="adminmenu.jsp"></jsp:include>
 	<h2>Book List</h2>
-<form action="addbooks" method="get">
-<table class="clist">
-<tr><td class="col">Id</td><td class="col">Name</td><td class="col">Subject</td><td class="col">Price</td>
-	<c:forEach items="${book}" var="b">
-		
-			
+	<table class="clist">
+		<tr>
+			<td class="col">Id</td>
+			<td class="col">Name</td>
+			<td class="col">Subject</td>
+			<td class="col">Price</td>
+			<c:forEach items="${book}" var="b">
+
+
 				<tr>
-					<td class="col">${b.getId()}<input type="hidden" name="id" value="${b.getId()}"></td>
+					<td class="col">${b.getId()}<input type="hidden" name="id"
+						value="${b.getId()}"></td>
 					<td class="col">${b.getName()}</td>
 					<td class="col">${b.getSubject()}</td>
 					<td class="col">${b.getPrice()}</td>
-					
-				
-				
-	</c:forEach>
-	<button>Add New Book</button>
+			</c:forEach>
 	</table>
-		</form>
-		
+	<form action="addbooks" method="get">
+		<button>Add New Book</button>
+	</form>
+
 </body>
 </html>
