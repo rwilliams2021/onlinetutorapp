@@ -8,7 +8,26 @@ public class Tutor {
 	private String password;
 	private String cell_number;
 	private String location;
+	private int rating;
 	
+	
+
+	@Override
+	public String toString() {
+		return "Tutor [id=" + id + ", name=" + name + ", email=" + email + ", password=" + password + ", cell_number="
+				+ cell_number + ", location=" + location + ", rating=" + rating + "]";
+	}
+
+
+	public int getRating() {
+		return rating;
+	}
+
+
+	public void setRating(int rating) {
+		this.rating = rating;
+	}
+
 
 	public String getLocation() {
 		return location;

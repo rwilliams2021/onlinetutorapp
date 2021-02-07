@@ -21,53 +21,48 @@ import com.finalproject.domain.Parent;
 import com.finalproject.domain.Tutor;
 import com.finalproject.service.TutorService;
 
-
-
 @Controller
 public class TutorController {
-	
 
-
-	
 	private List<Tutor> tutor = new ArrayList<Tutor>();
 
 	@Autowired
 	private TutorService tutorService;
-	
-	@RequestMapping(value = "/tutor",method = RequestMethod.GET)
+
+	@RequestMapping(value = "/tutor", method = RequestMethod.GET)
 	public String getTutors(Model model) {
-		List<Tutor> tutor =  tutorService.getAll();
+		List<Tutor> tutor = tutorService.getAll();
 		model.addAttribute("tutor", tutor);
 		return "adminshowtutors";
-		
+
 	}
-	@RequestMapping(value = "/tutors",method = RequestMethod.GET)
+
+	@RequestMapping(value = "/tutors", method = RequestMethod.GET)
 	public String getTutorsParent(Model model) {
-		List<Tutor> tutor =  tutorService.getAll();
+		List<Tutor> tutor = tutorService.getAll();
 		model.addAttribute("tutor", tutor);
 		return "parentshowtutors";
-		
+
 	}
-	@RequestMapping(value = "/profile",method = RequestMethod.GET)
+
+	@RequestMapping(value = "/profile", method = RequestMethod.GET)
 	public String getTutorById(HttpSession session, Model model) {
-		List<Tutor> tutor =  tutorService.getByIdl((Integer)session.getAttribute("id"));
+		List<Tutor> tutor = tutorService.getByIdl((Integer) session.getAttribute("id"));
 		model.addAttribute("tutor", tutor);
 		return "tutorprofile";
-		
+
 	}
 
 	public void setTutorService(TutorService tutorService) {
 		this.tutorService = tutorService;
 	}
 
-	
-
 	@RequestMapping(value = "/addtutors", method = RequestMethod.GET)
 	public String add() {
-	return "addtutorsnew"; 
+		return "addtutorsnew";
 	}
 
-	@RequestMapping(value = "/addtutors",method = RequestMethod.POST)
+	@RequestMapping(value = "/addtutors", method = RequestMethod.POST)
 	public String doAdd(String name, String email, String password, String cell_number, String location, Model model) {
 		Tutor t = new Tutor();
 		t.setName(name);
@@ -77,19 +72,19 @@ public class TutorController {
 		t.setLocation(location);
 		try {
 			int n = tutorService.add(t);
-			if(n>0)
-				model.addAttribute("msg", "Name: " + name +  "  ,  "  + "Email: "  + email +  "  ,  " + "Password: "  + password +  "  ,  " + "Cell Number: " + cell_number + " , " + "Location:" + location);
-				return "addtutorsresult";
-		}catch(Exception e){
-			model.addAttribute("msg","Email already exists");
+			if (n > 0)
+				model.addAttribute("msg", "Name: " + name + "  ,  " + "Email: " + email + "  ,  " + "Password: "
+						+ password + "  ,  " + "Cell Number: " + cell_number + " , " + "Location:" + location);
+			return "addtutorsresult";
+		} catch (Exception e) {
+			model.addAttribute("msg", "Email already exists");
 			return "addtutorsnew";
 		}
 	}
-	
 
-	
-	@RequestMapping(value = "/updatetutor",method = RequestMethod.POST)
-	public String update(String id, String name, String email,String password, String cell_number, String location, Model model) {
+	@RequestMapping(value = "/updatetutor", method = RequestMethod.POST)
+	public String update(String id, String name, String email, String password, String cell_number, String location,
+			Model model) {
 		Tutor t = new Tutor();
 		t.setId(Integer.parseInt(id));
 		t.setName(name);
@@ -98,35 +93,33 @@ public class TutorController {
 		t.setCell_number(cell_number);
 		t.setLocation(location);
 		int n = tutorService.update(t);
-		if(n>0)
-			model.addAttribute("msg", "Name: " + name +  "  ,  "  + "Email: "  + email +  
-					"  ,  "  + "Cell Number: " + cell_number + " , " + "Location:" + location);
-			return "updatetutorresult";
-			
+		if (n > 0)
+			model.addAttribute("msg", "Name: " + name + "  ,  " + "Email: " + email + "  ,  " + "Cell Number: "
+					+ cell_number + " , " + "Location:" + location);
+		return "updatetutorresult";
+
 	}
-	
+
 	@RequestMapping(value = "/updatetutor", method = RequestMethod.GET)
 	public String updateTutorsResult() {
-	return "updatetutor"; 
-	
+		return "updatetutor";
+
 	}
-	
-	
+
 	@RequestMapping(value = "/deletetutor", method = RequestMethod.POST)
 	public String deleteTutor(int tid, Model model) {
 		int n = tutorService.remove(tid);
-		
-		List<Tutor> tutor =  tutorService.getAll();
+
+		List<Tutor> tutor = tutorService.getAll();
 		model.addAttribute("tutor", tutor);
-		if(n>0) {
+		if (n > 0) {
 			return "adminshowtutors";
-		}
-		else {
+		} else {
 			model.addAttribute("msg", "Failed to delete tutor");
 			return "adminshowtutors";
 		}
 	}
-	
+
 	@RequestMapping(value = "/logintutor", method = RequestMethod.GET)
 	public String doLogin() {
 		return "logintutor";
@@ -147,11 +140,25 @@ public class TutorController {
 			return "logintutor";
 		}
 	}
-	
-	
-	
-	
+
+	@RequestMapping(value = "/addrating", method = RequestMethod.POST)
+	public String doRating(int tutorid, String tname, String temail, String tpassword, String tlocation, int myrating,
+			HttpSession session, Model model) {
+
+		List<Tutor> tutor = tutorService.getByIdl(tutorid);
+		Tutor t = tutor.get(0);
+		t.setName(tname);
+		t.setEmail(temail);
+		t.setPassword(tpassword);
+		t.setLocation(tlocation);
+		t.setRating(myrating);
+		int n = tutorService.update(t);
+		if (n > 0) {
+			return "redirect:/tutors";
+		}else {
+			model.addAttribute("msg", "Failed to update.");
+			return "redirect:/tutors";
+		}
+	}
 
 }
-
-
