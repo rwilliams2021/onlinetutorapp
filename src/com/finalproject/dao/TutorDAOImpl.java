@@ -17,7 +17,7 @@ public class TutorDAOImpl implements TutorDAO {
 
 	@Override
 	public int add(Tutor tutor) {
-		String sql = "insert into tutors(name,email, password,cell_number) values (?,?,?,?)";
+		String sql = "insert into tutors(name,email, password,cell_number, location) values (?,?,?,?,?)";
 		Object params[] = { tutor.getName(), tutor.getEmail(), tutor.getPassword(), tutor.getCell_number() };
 		int n = jdbcTemplate.update(sql, params);
 		return n;
@@ -31,8 +31,8 @@ public class TutorDAOImpl implements TutorDAO {
 
 	@Override
 	public int update(Tutor tutor) {
-		String sql = "update tutors set name=?, email=?, password=?, cell_number=? where id=?";
-		Object params[] = { tutor.getName(), tutor.getEmail(),tutor.getPassword(), tutor.getCell_number(), tutor.getId() };
+		String sql = "update tutors set name=?, email=?, password=?, cell_number=?, location=? where id=?";
+		Object params[] = { tutor.getName(), tutor.getEmail(),tutor.getPassword(), tutor.getCell_number(), tutor.getLocation(), tutor.getId() };
 		int n = jdbcTemplate.update(sql, params);
 		return n;
 	}

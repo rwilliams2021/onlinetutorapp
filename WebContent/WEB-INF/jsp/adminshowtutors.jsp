@@ -21,6 +21,7 @@
 			<td class="col">Name</td>
 			<td class="col">Email</td>
 			<td class="col">Cell Number</td>
+			<td class="col">Location</td>
 		</tr>
 		<c:forEach items="${tutor}" var="t">
 			<form>
@@ -35,6 +36,9 @@
 						
 					<td class="col">${t.getCell_number()}<input type="hidden"
 						name="cell_number" value="${t.getCell_number()}"></td>
+						
+						<td class="col">${t.getLocation()}<input type="hidden"
+						name="location" value="${t.getLocation()}"></td>
 						
 					<td class="col"><button formaction="updatetutor" formmethod="get">Update</button></td>
 					<td class="col"><button formaction="deletetutor" formmethod="post">Delete</button></td>

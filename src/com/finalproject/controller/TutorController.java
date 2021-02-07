@@ -68,16 +68,17 @@ public class TutorController {
 	}
 
 	@RequestMapping(value = "/addtutors",method = RequestMethod.POST)
-	public String doAdd(String name, String email, String password, String cell_number, Model model) {
+	public String doAdd(String name, String email, String password, String cell_number, String location, Model model) {
 		Tutor t = new Tutor();
 		t.setName(name);
 		t.setEmail(email);
 		t.setPassword(password);
 		t.setCell_number(cell_number);
+		t.setLocation(location);
 		try {
 			int n = tutorService.add(t);
 			if(n>0)
-				model.addAttribute("msg", "Name: " + name +  "  ,  "  + "Email: "  + email +  "  ,  " + "Password: "  + password +  "  ,  " + "Cell Number: " + cell_number);
+				model.addAttribute("msg", "Name: " + name +  "  ,  "  + "Email: "  + email +  "  ,  " + "Password: "  + password +  "  ,  " + "Cell Number: " + cell_number + " , " + "Location:" + location);
 				return "addtutorsresult";
 		}catch(Exception e){
 			model.addAttribute("msg","Email already exists");
@@ -88,17 +89,18 @@ public class TutorController {
 
 	
 	@RequestMapping(value = "/updatetutor",method = RequestMethod.POST)
-	public String update(String id, String name, String email,String password, String cell_number, Model model) {
+	public String update(String id, String name, String email,String password, String cell_number, String location, Model model) {
 		Tutor t = new Tutor();
 		t.setId(Integer.parseInt(id));
 		t.setName(name);
 		t.setEmail(email);
 		t.setPassword(password);
 		t.setCell_number(cell_number);
+		t.setLocation(location);
 		int n = tutorService.update(t);
 		if(n>0)
 			model.addAttribute("msg", "Name: " + name +  "  ,  "  + "Email: "  + email +  
-					"  ,  "  + "Cell Number: " + cell_number);
+					"  ,  "  + "Cell Number: " + cell_number + " , " + "Location:" + location);
 			return "updatetutorresult";
 			
 	}

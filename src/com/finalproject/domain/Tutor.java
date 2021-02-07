@@ -7,7 +7,18 @@ public class Tutor {
 	private String email; 
 	private String password;
 	private String cell_number;
+	private String location;
 	
+
+	public String getLocation() {
+		return location;
+	}
+
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
 
 	public String getCell_number() {
 		return cell_number;

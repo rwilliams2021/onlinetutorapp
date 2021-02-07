@@ -21,6 +21,7 @@
 			<td class="col">Name</td>
 			<td class="col">Email</td>
 			<td class="col">Cell Number</td>
+			<td class="col">Location</td>
 		</tr>
 		<c:forEach items="${tutor}" var="t">
 			<form method="post">
@@ -30,6 +31,7 @@
 					<td class="col">${t.getName()}</td>
 					<td class="col">${t.getEmail()}</td>
 					<td class="col">${t.getCell_number()}</td>
+					<td class="col">${t.getLocation()}</td>
 					<td class="col"><button formaction="addbooking">Book</button></td>
 					<td class="col"><button formaction="addrequest">Request Demo</button></td>
 				</tr>
