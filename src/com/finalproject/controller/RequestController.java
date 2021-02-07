@@ -12,8 +12,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.finalproject.domain.Booking;
+import com.finalproject.domain.Parent;
 import com.finalproject.domain.Request;
 import com.finalproject.domain.Tutor;
+import com.finalproject.service.ParentService;
 import com.finalproject.service.RequestService;
 import com.finalproject.service.TutorService;
 
@@ -24,6 +26,8 @@ public class RequestController {
 	private RequestService requestService;
 	@Autowired
 	private TutorService tutorService;
+	@Autowired
+	private ParentService parentService;
 	
 	@RequestMapping(value = "/addrequest", method = RequestMethod.GET)
 	public String add() {
@@ -40,7 +44,7 @@ public class RequestController {
 		return "redirect:/tutorsrequested";
 	}
 	@RequestMapping(value = "/tutorsrequested", method = RequestMethod.GET)
-	public String bookingslist(HttpSession session, Model model) {
+	public String requestlist(HttpSession session, Model model) {
 		
 		//Get all bookings for the logged in parent
 		List<Request> requests = requestService.findById((Integer)session.getAttribute("id")); 
@@ -57,5 +61,24 @@ public class RequestController {
 		model.addAttribute("tutor", tutor);
 		return "requestedtutorslist";	
 	}
+	@RequestMapping(value = "/parentsrequested", method = RequestMethod.GET)
+	public String requestlist2(HttpSession session, Model model) {
+		
+		//Get all bookings for the logged in parent
+		List<Request> requests = requestService.findByTutorId((Integer)session.getAttribute("id")); 
+				
+		List<Parent> parents = new ArrayList<Parent>();
+		for(Request r : requests) {
+			int parentid = r.getParentid();
+			List<Parent> plist = parentService.getByIdl(parentid); //return the parent from parent table with the parentid
+			//Access the parent from plist and add it to the parent list
+			for(Parent p : plist) {
+				parents.add(p);
+			}
+		}
+		model.addAttribute("parents", parents);
+		return "requestedparentslist";	
+	}
+
 
 }

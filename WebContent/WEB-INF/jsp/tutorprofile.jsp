@@ -31,7 +31,7 @@
 					<td class="col">${t.getName()}</td>
 					<td class="col">${t.getEmail()}</td>
 					<td class="col">${t.getCell_number()}</td>
-					<td class="col">${t.getLocation}</td>
+					<td class="col">${t.getLocation()}</td>
 				</tr>
 			</c:forEach>
 	</table>

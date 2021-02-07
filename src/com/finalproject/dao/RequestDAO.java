@@ -11,4 +11,5 @@ public interface RequestDAO {
 	
 	public int update(Request request);
 	public List<Request> findById(int id);
+	public List<Request> findByTutorid(int id);
 }

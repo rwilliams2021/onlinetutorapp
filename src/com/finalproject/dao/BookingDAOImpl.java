@@ -46,4 +46,11 @@ public class BookingDAOImpl implements BookingDAO {
 		Object params[] = { id };
 		return jdbcTemplate.query(sql, new BeanPropertyRowMapper<Booking>(Booking.class), params);
 	}
+
+	@Override
+	public List<Booking> findByTutorid(int id) {
+		String sql = "select parentid from bookings where tutorid = ?";
+		Object params[] = { id };
+		return jdbcTemplate.query(sql, new BeanPropertyRowMapper<Booking>(Booking.class), params);
+	}
 }
