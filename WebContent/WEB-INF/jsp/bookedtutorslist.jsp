@@ -12,7 +12,7 @@
 </head>
 <body>
 
-	<jsp:include page="/parentmenu.jsp"></jsp:include>
+	<jsp:include page="parentmenu.jsp"></jsp:include>
 	<h2>Booked Tutor List</h2>
 	<div>
 		<h6 style="color: red">${msg}</h6>

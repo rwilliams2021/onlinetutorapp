@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<jsp:include page="/adminmenu.jsp"></jsp:include>
+	<jsp:include page="adminmenu.jsp"></jsp:include>
 
 	<h1>Welcome Admin</h1>
 </body>

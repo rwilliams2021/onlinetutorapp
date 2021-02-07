@@ -12,8 +12,8 @@
 	<jsp:include page="indexmenu.jsp"></jsp:include>
 	<h2>
 		Welcome to Online Tutor App
-		<c:if test="${login == null}">Guest</c:if>
-		<c:if test="${login != null}">${login}</c:if>
+		<c:if test="${id == null}">Guest</c:if>
+		<c:if test="${id != null}">${id}</c:if>
 	</h2>
 </body>
 </html>

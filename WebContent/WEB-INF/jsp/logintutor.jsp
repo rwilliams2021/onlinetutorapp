@@ -25,7 +25,7 @@
 
 </head>
 
-<jsp:include page="/indexmenu.jsp"></jsp:include>
+<jsp:include page="indexmenu.jsp"></jsp:include>
 <body>
 	<h2>Login Tutor</h2>
 

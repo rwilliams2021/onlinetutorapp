@@ -12,7 +12,7 @@
 </head>
 <body>
 
-	<jsp:include page="/tutormenu.jsp"></jsp:include>
+	<jsp:include page="tutormenu.jsp"></jsp:include>
 	<h2>Tutor Profile</h2>
 
 	<table class="clist">
