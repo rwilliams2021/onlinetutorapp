@@ -11,7 +11,7 @@
 <body>
 	<jsp:include page="indexmenu.jsp"></jsp:include>
 	<h1>
-		Welcome to Online Tutor App
+		Welcome to MathWize, 
 		<c:if test="${id == null}">Guest</c:if>
 		<c:if test="${id != null}">${id}</c:if>
 	</h1>
