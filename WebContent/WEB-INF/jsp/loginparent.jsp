@@ -26,7 +26,8 @@
 </head>
 
 <jsp:include page="indexmenu.jsp"></jsp:include>
-<body>
+<body background=https://www.kclu.org/sites/kclu2/files/styles/x_large/public/202009/BOOKS_0.JPEG>
+<br><br>
 	<h2>Login Parent</h2>
 
 	<form action="loginparents" method="post">

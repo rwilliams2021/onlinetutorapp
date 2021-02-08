@@ -8,10 +8,11 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body background=https://www.kclu.org/sites/kclu2/files/styles/x_large/public/202009/BOOKS_0.JPEG>
 	<jsp:include page="indexmenu.jsp"></jsp:include>
 	<h1>
-		Welcome to MathWize, 
+	<br>
+		<h2 style="color:black;">Welcome to  MathWIZE</h2>
 		<c:if test="${id == null}">Guest</c:if>
 		<c:if test="${id != null}">${id}</c:if>
 	</h1>

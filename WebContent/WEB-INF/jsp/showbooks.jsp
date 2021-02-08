@@ -10,9 +10,10 @@
 <title>List Books</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body background=https://www.kclu.org/sites/kclu2/files/styles/x_large/public/202009/BOOKS_0.JPEG>
 
 	<jsp:include page="adminmenu.jsp"></jsp:include>
+	<br><br>
 	<h2>Book List</h2>
 	<table class="clist">
 		<tr>

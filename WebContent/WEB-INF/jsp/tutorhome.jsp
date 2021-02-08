@@ -6,8 +6,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 </head>
-<body>
+<body background=https://www.kclu.org/sites/kclu2/files/styles/x_large/public/202009/BOOKS_0.JPEG>
 	<jsp:include page="tutormenu.jsp"></jsp:include>
+	<br><br>
 	<h1>Welcome tutor</h1>
 </body>
 </html>

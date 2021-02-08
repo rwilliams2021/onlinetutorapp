@@ -7,9 +7,11 @@
 <link rel="stylesheet" href="css/style.css">
 
 </head>
-<jsp:include page="indexmenu.jsp"></jsp:include>
 
-<body>
+
+<body background=https://www.kclu.org/sites/kclu2/files/styles/x_large/public/202009/BOOKS_0.JPEG>
+<jsp:include page="indexmenu.jsp"></jsp:include>
+<br><br>
 	<h2>Login Admin</h2>
 	<form action="loginadmins" method="post">
 

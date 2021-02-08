@@ -10,9 +10,10 @@
 <title>List Parents</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body background=https://www.kclu.org/sites/kclu2/files/styles/x_large/public/202009/BOOKS_0.JPEG>
 
 	<jsp:include page="tutormenu.jsp"></jsp:include>
+	<br><br>
 	<h2>Requested Parent List</h2>
 	<div>
 		<h6 style="color: red">${msg}</h6>
