@@ -70,6 +70,7 @@ public class TutorController {
 		t.setPassword(password);
 		t.setCell_number(cell_number);
 		t.setLocation(location);
+		t.setRating(0); //default rating is 0
 		try {
 			int n = tutorService.add(t);
 			if (n > 0)
