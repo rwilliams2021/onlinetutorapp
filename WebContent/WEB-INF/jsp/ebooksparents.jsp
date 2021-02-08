@@ -12,7 +12,7 @@
 </head>
 <body>
 
-	<jsp:include page="adminmenu.jsp"></jsp:include>
+	<jsp:include page="parentmenu.jsp"></jsp:include>
 	<h2>Book List</h2>
 	<table class="clist">
 		<tr>
