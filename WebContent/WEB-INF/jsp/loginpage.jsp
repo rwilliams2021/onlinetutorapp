@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,10 +7,11 @@
 <link rel="stylesheet" href="css/style.css">
 
 </head>
+<jsp:include page="indexmenu.jsp"></jsp:include>
+
 <body>
-<h2>Login Page</h2>
-<jsp:include page="menu.jsp"></jsp:include>
-	<form action="login" method="post">
+	<h2>Login Admin</h2>
+	<form action="loginadmins" method="post">
 
 		<div>
 			<div>

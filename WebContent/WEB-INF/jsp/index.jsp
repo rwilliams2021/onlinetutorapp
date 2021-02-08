@@ -9,11 +9,11 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<jsp:include page="menu.jsp"></jsp:include>
-	<h2>
+	<jsp:include page="indexmenu.jsp"></jsp:include>
+	<h1>
 		Welcome to Online Tutor App
-		<c:if test="${login == null}">Guest</c:if>
-		<c:if test="${login != null}">${login}</c:if>
-	</h2>
+		<c:if test="${id == null}">Guest</c:if>
+		<c:if test="${id != null}">${id}</c:if>
+	</h1>
 </body>
 </html>

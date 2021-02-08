@@ -21,11 +21,11 @@ public class ParentDAOImpl implements ParentDAO{
 	}
 
 	@Override
-	public Parent findById(int id) {
+	public List<Parent> findById(int id) {
 		String sql = "select * from parents where id = ?";
 		Object params[] = { id };		
 		
-		return jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<Parent>(Parent.class), params);	
+		return jdbcTemplate.query(sql, new BeanPropertyRowMapper<Parent>(Parent.class), params);	
 	}
 
 	@Override
@@ -45,7 +45,7 @@ public class ParentDAOImpl implements ParentDAO{
 	}
 
 	@Override
-	public boolean check(Parent parent) {
+	public boolean checkLogin(Parent parent) {
 		Object params[] = { parent.getEmail(), parent.getPassword() };
 		int n = jdbcTemplate.queryForObject("select count(*) from parents where email = ? and password=?  ",
 				Integer.class, params);
@@ -53,6 +53,13 @@ public class ParentDAOImpl implements ParentDAO{
 			return false;
 		else
 			return true;
+	}
+
+	@Override
+	public int findByEmail(String email) {
+		Object params[] = { email };
+		return jdbcTemplate.queryForObject("select id from parents where email = ?",
+				Integer.class, params);
 	}
 	
 	

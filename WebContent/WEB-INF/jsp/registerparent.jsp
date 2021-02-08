@@ -11,6 +11,8 @@
 </style>
 </head>
 <body>
+	<jsp:include page="indexmenu.jsp"></jsp:include>
+
 	<h2>Register Parent</h2>
 	<form action="register" method="post">
 		<div>
@@ -25,6 +27,9 @@
 			</div>
 			<div>
 				<label>Cellno</label> <input type='text' name='cellno'>
+			</div>
+			<div>
+				<h6 style="color: red">${msg}</h6>
 			</div>
 			<div>
 				<button>Next>></button>

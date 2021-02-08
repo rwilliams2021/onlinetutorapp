@@ -11,37 +11,65 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.finalproject.domain.Parent;
+import com.finalproject.domain.Tutor;
 import com.finalproject.service.ParentService;
 
 @Controller
 public class ParentController {
 	@Autowired
 	private ParentService parentService;
-	
+
 	@RequestMapping(value = "/parents",method = RequestMethod.GET)
 	public String getParents(Model model) {
 		
 		List<Parent> parents =  parentService.getAll();
 		model.addAttribute("parents", parents);
 		return "showparents";
-		
 	}
-	@RequestMapping(value = "/register",method = RequestMethod.GET)
-	public String registerParents() {;
+
+	@RequestMapping(value = "/deleteparent", method = RequestMethod.POST)
+	public String deleteParent(int pid, Model model) {
+		int n = parentService.remove(pid);
+		
+		List<Parent> parents =  parentService.getAll();
+		model.addAttribute("parents", parents);
+		if(n>0) {
+			return "showparents";
+		}
+		else {
+			model.addAttribute("msg", "Failed to delete parent");
+			return "showparents";
+		}
+	}
+
+	@RequestMapping(value = "/register", method = RequestMethod.GET)
+	public String registerParents() {
 		return "registerparent";
 	}
-	@RequestMapping(value = "/register",method = RequestMethod.POST)
+
+	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public String doRegister(String name, String email, String password, String cellno, Model model) {
-		Parent p = new Parent();
-		p.setName(name);
-		p.setEmail(email);
-		p.setPassword(password);
-		p.setCellno(Integer.valueOf(cellno));
-		int n = parentService.add(p);
-		if(n>0)
-			return "regsuccessparent";
-		else
+
+		if ((name != "") && (email != "") && (password != "") && (cellno != "")) {
+			Parent p = new Parent();
+			p.setName(name);
+			p.setEmail(email);
+			p.setPassword(password);
+			p.setCellno(cellno);
+			try {
+				int n = parentService.add(p);
+				if (n > 0)
+					return "loginparent";
+				else
+					return "registerparent";
+			} catch (Exception e) {
+				model.addAttribute("msg", "Email already exists");
+				return "registerparent";			}
+
+		} else {
+			model.addAttribute("msg", "Please fill in all fields");
 			return "registerparent";
+		}
 	}
 
 	@RequestMapping(value = "/loginparents", method = RequestMethod.GET)
@@ -50,25 +78,24 @@ public class ParentController {
 	}
 
 	@RequestMapping(value = "/loginparents", method = RequestMethod.POST)
-	public String doCheck(String email, String password,HttpSession session,Model model) {
+	public String doLogin2(String email, String password, HttpSession session, Model model) {
 		Parent p = new Parent();
 		p.setEmail(email);
 		p.setPassword(password);
-		if (parentService.check(p))
-		{
+		if (parentService.check(p)) {
+			int id = parentService.getByEmail(email);
+			session.setAttribute("id", id);
 			session.setAttribute("email", email);
-//			parentService.updateCart(session.getId(), email); //possibly updatetutor here instead
-			return "parentloggedin";
-		}
-		else {
-			model.addAttribute("msg","Invalid email/password");
+			return "parenthome";
+		} else {
+			model.addAttribute("msg", "Invalid email/password");
 			return "loginparent";
 		}
 	}
+
 
 	public void setParentService(ParentService parentService) {
 		this.parentService = parentService;
 	}
 
-	
 }

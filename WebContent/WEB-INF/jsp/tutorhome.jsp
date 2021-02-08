@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Succesfully registered parent</h1>
+	<jsp:include page="tutormenu.jsp"></jsp:include>
+	<h1>Welcome tutor</h1>
 </body>
 </html>

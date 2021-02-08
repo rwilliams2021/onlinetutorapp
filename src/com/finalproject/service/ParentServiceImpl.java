@@ -24,7 +24,7 @@ public class ParentServiceImpl implements ParentService{
 	}
 
 	@Override
-	public Parent getByIdl(int id) {
+	public List<Parent> getByIdl(int id) {
 		return parentDAO.findById(id);
 	}
 
@@ -42,7 +42,12 @@ public class ParentServiceImpl implements ParentService{
 
 	@Override
 	public boolean check(Parent parent) {
-		return parentDAO.check(parent);
+		return parentDAO.checkLogin(parent);
+	}
+
+	@Override
+	public int getByEmail(String email) {
+		return parentDAO.findByEmail(email);
 	}
 
 }

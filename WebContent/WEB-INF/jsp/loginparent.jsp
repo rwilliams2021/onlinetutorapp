@@ -8,7 +8,7 @@
 
 <script>
 	function validate(frm) {
-		if (frm.login.value == "") {
+		if (frm.email.value == "") {
 			alert("Login is required...");
 			return false;
 		}
@@ -25,7 +25,7 @@
 
 </head>
 
-<jsp:include page="/menu.jsp"></jsp:include>
+<jsp:include page="indexmenu.jsp"></jsp:include>
 <body>
 	<h2>Login Parent</h2>
 
