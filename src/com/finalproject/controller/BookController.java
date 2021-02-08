@@ -53,4 +53,11 @@ public class BookController {
 			return "addbooksresult";
 		
 	}
+	@RequestMapping(value = "/ebooksparents",method = RequestMethod.GET)
+	public String getBooks1(Model model) {
+		List<Book> book =  bookService.getAll();
+		model.addAttribute("book", book);
+		return "ebooksparents";
+		
+	}
 }
